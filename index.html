@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrypedia</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="info">
+            <h1>Contrypedia</h1>
+            <p>This is a simple app for getting information about countries</p>
+            <button onclick="filterByCurrency('eur')">Countries Using EUR</button>
+            <button onclick="filterByLanguage('english')">Countries Speaking English</button>
+            <button onclick="searchSpecificCountry('macedonia')">Search Macedonia</button>
+        </div>
+        <div id="result"></div>
+
+    </div>
+    <div class="content">
+        <input type="text" id="searchInput" placeholder="Enter country name...">
+        <button onclick="searchCountry()">Search</button>
+        <select id="filterSelect">
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="area-asc">Area (Low to High)</option>
+            <option value="area-desc">Area (High to Low)</option>
+            <option value="population-asc">Population (Low to High)</option>
+            <option value="population-desc">Population (High to Low)</option>
+        </select>
+        <img src="loading.gif" id="loading" alt="Loading..." style="display: none;">
+        <table id="countryTable">
+            <thead>
+                <tr>
+                    <th>Flag</th>
+                    <th>Name</th>
+                    <th>Language</th>
+                    <th>Currency</th>
+                    <th>Population</th>
+                    <th>Capital</th>
+                    <th>Area</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+        </table>
+    </div>
+    <p></p>
+    <script src="index.js"></script>
+</body>
+
+</html>
